@@ -1,7 +1,6 @@
 # Glide adapter for Symfony
 
 [![Author](http://img.shields.io/badge/author-@reinink-blue.svg?style=flat-square)](https://twitter.com/reinink)
-[![Source Code](http://img.shields.io/badge/source-thephpleague/glide-symfony-blue.svg?style=flat-square)](https://github.com/thephpleague/glide-symfony)
 [![Latest Version](https://img.shields.io/github/release/thephpleague/glide-symfony.svg?style=flat-square)](https://github.com/thephpleague/glide-symfony/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/thephpleague/glide-symfony/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/thephpleague/glide-symfony/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/glide-symfony)
