@@ -5,8 +5,6 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/thephpleague/glide-symfony/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/thephpleague/glide-symfony/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/glide-symfony)
 [![HHVM Status](https://img.shields.io/hhvm/league/glide-symfony.svg?style=flat-square)](http://hhvm.h4cc.de/package/league/glide-symfony)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/thephpleague/glide-symfony.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/glide-symfony/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/glide-symfony.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/glide-symfony)
 [![Total Downloads](https://img.shields.io/packagist/dt/league/glide-symfony.svg?style=flat-square)](https://packagist.org/packages/league/glide-symfony)
 
 ## Installation

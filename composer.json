@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "league/glide": "dev-develop",
         "league/flysystem": "^1.0",
+        "league/glide": "dev-master",
+        "php": ">=5.4",
         "symfony/http-foundation": "^2.3"
     },
     "require-dev": {
@@ -22,12 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "League\\Glide\\Responses\\": "src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
+            "League\\Glide\\": "src/"
         }
     }
 }
