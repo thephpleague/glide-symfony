@@ -11,9 +11,7 @@
         }
     ],
     "require": {
-        "league/flysystem": "^1.0",
-        "league/glide": "dev-master",
-        "php": ">=5.4",
+        "league/glide": "^1.0",
         "symfony/http-foundation": "^2.3"
     },
     "require-dev": {
