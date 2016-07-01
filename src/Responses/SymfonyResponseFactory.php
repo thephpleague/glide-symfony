@@ -46,7 +46,9 @@ class SymfonyResponseFactory implements ResponseFactoryInterface
         }
 
         $response->setCallback(function () use ($stream) {
-            //rewind($stream);
+            if (ftell($stream) !== 0) {
+                rewind($stream);
+            }
             fpassthru($stream);
             fclose($stream);
         });
