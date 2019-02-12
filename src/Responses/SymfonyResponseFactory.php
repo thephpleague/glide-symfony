@@ -40,9 +40,9 @@ class SymfonyResponseFactory implements ResponseFactoryInterface
         $response->setMaxAge(31536000);
         $response->setExpires(date_create()->modify('+1 years'));
 
-        if ($this->request) {           
+        if ($this->request) {
             $metadata = $cache->getMetadata($path);
-            if(isset($metadata['etag'])) {
+            if (isset($metadata['etag'])) {
                 $response->setEtag($metadata['etag']);
             }
 
