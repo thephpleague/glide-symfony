@@ -44,6 +44,10 @@ class SymfonyResponseFactory implements ResponseFactoryInterface
             $metadata = $cache->getMetadata($path);
             if (isset($metadata['etag'])) {
                 $response->setEtag($metadata['etag']);
+                $request_etags = $this->request->getETags();
+                if ($request_etags and $request_etags == $metadata['etag']) {
+                    $response->setNotModified();
+                }
             }
 
             $response->setLastModified(date_create()->setTimestamp($cache->getTimestamp($path)));
