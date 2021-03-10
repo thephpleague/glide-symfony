@@ -4,9 +4,9 @@ namespace Responses;
 
 use League\Glide\Responses\SymfonyResponseFactory;
 use Mockery;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class SymfonyResponseFactoryTest extends PHPUnit_Framework_TestCase
+class SymfonyResponseFactoryTest extends TestCase
 {
     public function tearDown(): void
     {
@@ -35,7 +35,7 @@ class SymfonyResponseFactoryTest extends PHPUnit_Framework_TestCase
         self::assertInstanceOf('Symfony\Component\HttpFoundation\StreamedResponse', $response);
         self::assertEquals('image/jpeg', $response->headers->get('Content-Type'));
         self::assertEquals('0', $response->headers->get('Content-Length'));
-        self::assertContains(gmdate('D, d M Y H:i', strtotime('+1 years')), $response->headers->get('Expires'));
+        self::assertStringContainsString(gmdate('D, d M Y H:i', strtotime('+1 years')), $response->headers->get('Expires'));
         self::assertEquals('max-age=31536000, public', $response->headers->get('Cache-Control'));
     }
 }
