@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-$ composer require league/glide-symfony
+composer require league/glide-symfony
 ```
 
 ## Documentation
