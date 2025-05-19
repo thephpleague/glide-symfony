@@ -15,8 +15,8 @@ jobs:
                 glide-version: [^2, ^3]
                 dependencies: [lowest, stable]
                 exclude:
-                  - php: 8.1
-                    symfony: ^7
+                  - php-version: 8.1
+                    symfony-version: ^7
         steps:
             - name: Checkout
               uses: actions/checkout@v4
