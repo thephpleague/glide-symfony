@@ -10,15 +10,19 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php-versions: ['7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+                php: [8.1, 8.2, 8.3, 8.4]
+                symfony: [^5, ^6, ^7]
+                glide: [^2, ^3]
         steps:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Install PHP
               uses: shivammathur/setup-php@v2
               with:
-                php-version: ${{ matrix.php-versions }}
+                php-version: ${{ matrix.php }}
             - name: Install dependencies
-              run: composer install --no-interaction --no-ansi
+              run: |
+                composer require "symfony/http-foundation:${{ matrix.symfony }}" "league/glide:${{ matrix.glide }}" --no-interaction --no-update
+                composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest --with-all-dependencies
             - name: PHPUnit
               run: php vendor/bin/phpunit
