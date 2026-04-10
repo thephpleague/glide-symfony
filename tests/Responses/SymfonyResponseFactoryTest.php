@@ -5,6 +5,7 @@ namespace Responses;
 use League\Glide\Responses\SymfonyResponseFactory;
 use Mockery;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 class SymfonyResponseFactoryTest extends TestCase
 {
@@ -37,5 +38,25 @@ class SymfonyResponseFactoryTest extends TestCase
         self::assertEquals('0', $response->headers->get('Content-Length'));
         self::assertStringContainsString(gmdate('D, d M Y H:i', strtotime('+1 years')), $response->headers->get('Expires'));
         self::assertEquals('max-age=31536000, public', $response->headers->get('Cache-Control'));
+    }
+
+    public function testCreateWithRequest(): void
+    {
+        $cache = Mockery::mock('League\Flysystem\FilesystemOperator', function ($mock) {
+            $mock->shouldReceive('mimeType')->andReturn('image/jpeg')->once();
+            $mock->shouldReceive('fileSize')->andReturn(0)->once();
+            $mock->shouldReceive('readStream');
+            $mock->shouldReceive('lastModified')->andReturn(strtotime('2025-01-01'));
+        });
+
+        $factory = new SymfonyResponseFactory(new Request());
+        $response = $factory->create($cache, '');
+
+        self::assertInstanceOf('Symfony\Component\HttpFoundation\StreamedResponse', $response);
+        self::assertEquals('image/jpeg', $response->headers->get('Content-Type'));
+        self::assertEquals('0', $response->headers->get('Content-Length'));
+        self::assertStringContainsString(gmdate('D, d M Y H:i', strtotime('+1 years')), $response->headers->get('Expires'));
+        self::assertEquals('max-age=31536000, public', $response->headers->get('Cache-Control'));
+        self::assertEquals('Wed, 01 Jan 2025 00:00:00 GMT', $response->headers->get('Last-Modified'));
     }
 }
