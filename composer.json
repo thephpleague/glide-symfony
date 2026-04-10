@@ -8,6 +8,11 @@
             "name": "Jonathan Reinink",
             "email": "jonathan@reinink.ca",
             "homepage": "http://reinink.ca"
+        },
+        {
+            "name": "Robin Chalas",
+            "email": "robin@baksla.sh",
+            "homepage": "https://baksla.sh"
         }
     ],
     "require": {
