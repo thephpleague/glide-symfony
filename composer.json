@@ -28,5 +28,10 @@
         "psr-4": {
             "League\\Glide\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\Glide\\Tests\\": "tests/"
+        }
     }
 }

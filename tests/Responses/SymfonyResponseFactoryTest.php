@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Responses;
+namespace League\Glide\Tests\Responses;
 
 use League\Flysystem\FilesystemOperator;
 use League\Glide\Responses\SymfonyResponseFactory;
